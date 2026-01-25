@@ -1,8 +1,9 @@
 //file:noinspection GroovyAssignabilityCheck
 //file:noinspection GroovyAccessibility
 //file:noinspection GradlePackageVersionRange
+
 plugins {
-	id "fabric-loom" version "1.5.+"
+    id "fabric-loom" version "1.10.+"
 	id "maven-publish"
 	id "me.modmuss50.mod-publish-plugin" version "0.3.5"
 }
@@ -23,10 +24,10 @@ repositories {
 	maven { url = "https://maven.terraformersmc.com/releases/" } // Mod Menu
 	maven { url = "https://mvn.devos.one/snapshots/" } // Create, Porting Lib, Forge Tags, Milk Lib, Registrate
 	maven { url = "https://mvn.devos.one/releases/" } // Porting Lib Releases
+	maven { url = "https://maven.createmod.net" } // Create, Porting Lib, Forge Tags, Milk Lib, Registrate
 	maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/" } // Forge Config API Port
 	maven { url = "https://maven.jamieswhiteshirt.com/libs-release" } // Reach Entity Attributes
 	maven { url = "https://jitpack.io/" } // Mixin Extras, Fabric ASM
-	maven { url = "https://maven.tterrag.com/" } // Flywheel
 	maven { url = "https://maven.dragons.plus/releases" } // DragonLib
 	maven { url = "https://maven.dragons.plus/snapshots" } // DragonLib snapshot
 	mavenLocal() // Fast test
@@ -65,17 +66,17 @@ dependencies {
 	minecraft("com.mojang:minecraft:${minecraft_version}")
 	mappings(loom.layered {
 		//it.mappings("org.quiltmc:quilt-mappings:${minecraft_version}+build.${qm_version}:intermediary-v2")
-		it.parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
 		it.officialMojangMappings { nameSyntheticMembers = false }
+		it.parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
 	})
 	modImplementation("net.fabricmc:fabric-loader:${fabric_loader_version}")
 
 	// dependencies
 	modImplementation("net.fabricmc.fabric-api:fabric-api:${fabric_api_version}")
 
-	// Create - dependencies are added transitively
-	modImplementation("com.simibubi.create:create-fabric-${minecraft_version}:${create_version}")
 
+	// Create
+	modImplementation("com.simibubi.create:create-fabric:${create_version}")
 
 	// Create Dragon Lib
 	include(modImplementation("plus.dragons.createdragonlib:create_dragon_lib-fabric-${minecraft_version}:${dragonlib_version}"){

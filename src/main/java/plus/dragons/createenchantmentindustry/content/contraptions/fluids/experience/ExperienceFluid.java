@@ -17,13 +17,13 @@ public class ExperienceFluid extends VirtualFluid {
 
     protected final int xpRatio;
 
-    public ExperienceFluid(int xpRatio, Properties properties) {
-        super(properties);
+    public ExperienceFluid(int xpRatio, Properties properties, boolean source) {
+        super(properties, source);
         this.xpRatio = xpRatio;
     }
 
-    public ExperienceFluid(Properties properties) {
-        this(1, properties);
+    public ExperienceFluid(Properties properties, boolean source) {
+        this(1, properties, source);
     }
 
     public ExperienceOrb convertToOrb(Level level, double x, double y, double z, int fluidAmount) {

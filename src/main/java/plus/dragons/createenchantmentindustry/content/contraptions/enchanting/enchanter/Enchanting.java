@@ -4,9 +4,10 @@ import static plus.dragons.createenchantmentindustry.EnchantmentIndustry.UNIT_PE
 
 import java.util.Map;
 
+import net.createmod.catnip.data.Pair;
+
 import org.jetbrains.annotations.Nullable;
 
-import com.simibubi.create.foundation.utility.Pair;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;

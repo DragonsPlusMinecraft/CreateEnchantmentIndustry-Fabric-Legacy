@@ -7,7 +7,6 @@ import io.github.fabricators_of_create.porting_lib.data.ExistingFileHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.simibubi.create.foundation.ponder.PonderLocalization;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 
 import net.fabricmc.api.ModInitializer;
@@ -18,7 +17,6 @@ import plus.dragons.createdragonlib.advancement.AdvancementFactory;
 import plus.dragons.createdragonlib.lang.Lang;
 import plus.dragons.createdragonlib.lang.LangFactory;
 import plus.dragons.createdragonlib.tag.TagGen;
-import plus.dragons.createenchantmentindustry.content.contraptions.fluids.OpenEndedPipeEffects;
 import plus.dragons.createenchantmentindustry.entry.CeiBlockEntities;
 import plus.dragons.createenchantmentindustry.entry.CeiBlocks;
 import plus.dragons.createenchantmentindustry.entry.CeiContainerTypes;
@@ -30,7 +28,6 @@ import plus.dragons.createenchantmentindustry.entry.CeiRecipeTypes;
 import plus.dragons.createenchantmentindustry.entry.CeiTags;
 import plus.dragons.createenchantmentindustry.foundation.advancement.CeiAdvancements;
 import plus.dragons.createenchantmentindustry.foundation.config.CeiConfigs;
-import plus.dragons.createenchantmentindustry.foundation.ponder.content.CeiPonderIndex;
 
 public class EnchantmentIndustry implements ModInitializer {
 	public static final int UNIT_PER_MB = (int) (BUCKET / 1000);
@@ -42,10 +39,6 @@ public class EnchantmentIndustry implements ModInitializer {
     public static final AdvancementFactory ADVANCEMENT_FACTORY = AdvancementFactory.create(NAME, ID, CeiAdvancements::register);
     public static final LangFactory LANG_FACTORY = LangFactory.create(NAME, ID)
         .advancements(CeiAdvancements::register)
-        .ponders(() -> {
-            CeiPonderIndex.register();
-            CeiPonderIndex.registerTags();
-        })
         .tooltips()
         .ui();
 
@@ -73,7 +66,6 @@ public class EnchantmentIndustry implements ModInitializer {
 		CeiFluids.registerLavaReaction();
 		CeiAdvancements.register();
 		CeiPackets.registerPackets();
-		OpenEndedPipeEffects.register();
 
 		ServerTickEvents.START_WORLD_TICK.register(CeiFluids::handleInkEffect);
 
@@ -86,7 +78,6 @@ public class EnchantmentIndustry implements ModInitializer {
 				.addItemTagFactory(CeiTags::genItemTag)
 				.addFluidTagFactory(CeiTags::genFluidTag)
 				.build().activate();
-		PonderLocalization.provideRegistrateLang(REGISTRATE);
 		LANG_FACTORY.datagen(gen);
 	}
 }

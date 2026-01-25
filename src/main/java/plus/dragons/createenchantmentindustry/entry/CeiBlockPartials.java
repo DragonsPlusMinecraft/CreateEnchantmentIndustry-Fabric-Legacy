@@ -1,6 +1,6 @@
 package plus.dragons.createenchantmentindustry.entry;
 
-import com.jozufozu.flywheel.core.PartialModel;
+import dev.engine_room.flywheel.lib.model.baked.PartialModel;
 import plus.dragons.createenchantmentindustry.EnchantmentIndustry;
 
 public class CeiBlockPartials {
@@ -11,9 +11,9 @@ public class CeiBlockPartials {
             PRINTER_BOTTOM = block("printer/bottom");
 
     private static PartialModel block(String path) {
-        return new PartialModel(EnchantmentIndustry.genRL("block/" + path));
+        return PartialModel.of(EnchantmentIndustry.genRL("block/" + path));
     }
-    
+
     public static void register() {}
-    
+
 }

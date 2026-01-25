@@ -5,9 +5,10 @@ import static plus.dragons.createenchantmentindustry.EnchantmentIndustry.UNIT_PE
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import net.createmod.catnip.data.Pair;
+
 import org.jetbrains.annotations.Nullable;
 
-import com.simibubi.create.foundation.utility.Pair;
 
 import io.github.fabricators_of_create.porting_lib.transfer.TransferUtil;
 import io.github.fabricators_of_create.porting_lib.transfer.item.ItemStackHandlerContainer;

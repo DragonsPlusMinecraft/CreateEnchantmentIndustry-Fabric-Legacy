@@ -1,8 +1,8 @@
 package plus.dragons.createenchantmentindustry.foundation.config;
 
-import com.simibubi.create.foundation.config.ConfigBase;
-import com.simibubi.create.foundation.config.ui.ConfigAnnotations;
 
+import net.createmod.catnip.config.ConfigBase;
+import net.createmod.catnip.config.ui.ConfigAnnotations;
 import net.minecraftforge.common.ForgeConfigSpec;
 
 public class CeiServerConfig extends ConfigBase {

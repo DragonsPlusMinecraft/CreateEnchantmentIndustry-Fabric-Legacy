@@ -33,6 +33,7 @@ A mod offering more tools and methods to handle experience & enchantment in Crea
 - albertosaurio65 (European Spanish localization)
 - MEGATREX4 (Ukrainian localization)
 - EvanHsieh0415, cvrunmin (Traditional Chinese localization) Archerymaister (German localization) Luc_Creeper74 (French localization)
+- mpnordland (Port to Create 6)
 
 ## Contribute
 Feel free to open a PR to either translate the mod or to add another feature! All help is appreciated!

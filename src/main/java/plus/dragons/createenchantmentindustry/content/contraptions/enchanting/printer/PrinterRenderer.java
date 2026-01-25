@@ -1,13 +1,14 @@
 package plus.dragons.createenchantmentindustry.content.contraptions.enchanting.printer;
 
-import com.jozufozu.flywheel.core.PartialModel;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
 import com.simibubi.create.foundation.blockEntity.renderer.SmartBlockEntityRenderer;
 import com.simibubi.create.foundation.fluid.FluidRenderer;
-import com.simibubi.create.foundation.render.CachedBufferer;
 
+import dev.engine_room.flywheel.lib.model.baked.PartialModel;
 import io.github.fabricators_of_create.porting_lib.fluids.FluidStack;
+import net.createmod.catnip.platform.CatnipServices;
+import net.createmod.catnip.render.CachedBuffers;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
@@ -41,8 +42,8 @@ public class PrinterRenderer extends SmartBlockEntityRenderer<PrinterBlockEntity
             float yOffset = (11 / 16f) * level;
             ms.pushPose();
             ms.translate(0, yOffset, 0);
-            FluidRenderer.renderFluidBox(fluidStack, min, min - yOffset, min, max, min, max, buffer, ms, light,
-                    false);
+            CatnipServices.FLUID_RENDERER.renderFluidBox(fluidStack.getFluid().defaultFluidState(), min, min - yOffset, min, max, min, max, buffer, ms, light,
+                    false, false);
             ms.popPose();
         }
         //Render partials
@@ -63,7 +64,7 @@ public class PrinterRenderer extends SmartBlockEntityRenderer<PrinterBlockEntity
         ms.pushPose();
         for (PartialModel bit : TUBE) {
             ms.translate(0, -3 * squeeze / 32f, 0);
-            CachedBufferer
+            CachedBuffers
                     .partial(bit, be.getBlockState())
                     .light(light)
                     .renderInto(ms, buffer.getBuffer(RenderType.solid()));
@@ -71,7 +72,7 @@ public class PrinterRenderer extends SmartBlockEntityRenderer<PrinterBlockEntity
         ms.popPose();
 
         BlockState blockState = be.getBlockState();
-        CachedBufferer
+        CachedBuffers
                 .partial(CeiBlockPartials.PRINTER_BOTTOM, blockState)
                 .translate(0, squeeze / 2f, 0)
                 .light(light)

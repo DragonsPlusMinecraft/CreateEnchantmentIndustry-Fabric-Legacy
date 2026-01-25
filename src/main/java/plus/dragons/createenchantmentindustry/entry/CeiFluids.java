@@ -45,7 +45,9 @@ public class CeiFluids {
     public static final ResourceLocation EXPERIENCE_FLOW_RL = EnchantmentIndustry.genRL("fluid/experience_flow");
 
     public static final FluidEntry<ExperienceFluid> EXPERIENCE = REGISTRATE.virtualFluid("experience",
-            EXPERIENCE_STILL_RL, EXPERIENCE_FLOW_RL, ExperienceFluid::new)
+            EXPERIENCE_STILL_RL, EXPERIENCE_FLOW_RL,
+			properties -> new ExperienceFluid(properties, true),
+			properties -> new ExperienceFluid(properties, false))
             .lang("Liquid Experience")
 			.fluidAttributes(()->new FluidVariantAttributeHandler(){
 				@Override
@@ -69,7 +71,9 @@ public class CeiFluids {
     public static final ResourceLocation HYPER_EXPERIENCE_FLOW_RL = EnchantmentIndustry.genRL("fluid/hyper_experience_flow");
 
     public static final FluidEntry<HyperExperienceFluid> HYPER_EXPERIENCE = REGISTRATE.virtualFluid("hyper_experience",
-            HYPER_EXPERIENCE_STILL_RL, HYPER_EXPERIENCE_FLOW_RL, HyperExperienceFluid::new)
+            HYPER_EXPERIENCE_STILL_RL, HYPER_EXPERIENCE_FLOW_RL,
+			properties -> new HyperExperienceFluid(properties, true),
+			properties -> new HyperExperienceFluid(properties, false))
             .lang("Liquid Hyper Experience")
 			.fluidAttributes(()->new FluidVariantAttributeHandler(){
 				@Override
