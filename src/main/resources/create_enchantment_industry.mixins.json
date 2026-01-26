@@ -6,17 +6,18 @@
   "mixins": [
     "AbstractFurnaceBlockEntityMixin",
     "BasinBlockEntityMixin",
-    "fabric.RegistrateDisplayItemsGeneratorMixin",
     "CrushingWheelControllerBlockEntityMixin",
     "DeployerFakePlayerMixin",
     "FillingBySpoutMixin",
     "FluidTankBlockMixin",
     "ItemDrainBlockEntityAccessor",
     "ItemDrainBlockMixin",
+    "OpenEndedPipeMixin",
     "PlayerMixin",
     "SpoutBlockEntityAccessor",
     "SpoutBlockMixin",
-    "TankSegmentAccessor"
+    "TankSegmentAccessor",
+    "fabric.RegistrateDisplayItemsGeneratorMixin"
   ],
   "client": [
     "client.CameraMixin"

@@ -2,13 +2,14 @@ package plus.dragons.createenchantmentindustry.foundation.mixin;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import net.createmod.catnip.math.VecHelper;
+
 import org.spongepowered.asm.mixin.Mixin;
 
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.content.fluids.spout.SpoutBlock;
 import com.simibubi.create.content.fluids.spout.SpoutBlockEntity;
 import com.simibubi.create.foundation.block.IBE;
-import com.simibubi.create.foundation.utility.VecHelper;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;

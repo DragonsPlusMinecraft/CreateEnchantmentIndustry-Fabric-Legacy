@@ -8,9 +8,10 @@ import java.util.function.Supplier;
 import fuzs.forgeconfigapiport.api.config.v2.ForgeConfigRegistry;
 import fuzs.forgeconfigapiport.api.config.v2.ModConfigEvents;
 
+import net.createmod.catnip.config.ConfigBase;
+
 import org.apache.commons.lang3.tuple.Pair;
 
-import com.simibubi.create.foundation.config.ConfigBase;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.config.ModConfig;

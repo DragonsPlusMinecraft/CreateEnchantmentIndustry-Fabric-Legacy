@@ -2,10 +2,9 @@ package plus.dragons.createenchantmentindustry.content.contraptions.enchanting.e
 
 import java.util.Optional;
 
-import com.simibubi.create.foundation.utility.Pair;
 
+import net.createmod.catnip.data.Pair;
 import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
